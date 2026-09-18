@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M3ORA Creative Studio — Make Ideas Memorable</title>
+  <meta name="description" content="M3ORA Creative Studio — a creative studio where Mind, Motion & Meaning come together to transform ideas into memorable visual experiences. Branding, motion, web design and digital content.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Custom cursor (disabled automatically on touch via script.js) -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- =====================================================
+       NAVBAR
+  ====================================================== -->
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="#top" class="navbar__logo" aria-label="M3ORA Creative Studio — home">
+        <img src="water-mark-logo.png" alt="M3ORA Creative Studio">
+      </a>
+
+      <nav class="navbar__nav" id="primaryNav" aria-label="Primary">
+        <ul class="navbar__links">
+          <li><a href="#work">Work</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="navbar__right">
+        <a href="#contact" class="btn btn--outline navbar__cta">Let's Talk</a>
+        <button class="navbar__burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <nav aria-label="Mobile primary">
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#contact" class="btn btn--primary mobile-menu__cta">Let's Talk</a>
+  </div>
+
+  <main id="top">
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+    <section class="hero" id="hero">
+      <div class="hero__container">
+        <p class="hero__eyebrow">M3ORA Creative Studio</p>
+        <h1 class="hero__headline">
+          <span class="reveal-line"><span>Make Ideas</span></span>
+          <span class="reveal-line"><span>Memorable.</span></span>
+        </h1>
+        <p class="hero__support">
+          M3ORA is where Mind, Motion &amp; Meaning come together to transform ideas
+          into memorable visual experiences.
+        </p>
+        <div class="hero__actions">
+          <a href="#work" class="btn btn--primary">View Our Work</a>
+          <a href="#contact" class="btn btn--outline">Start a Project</a>
+        </div>
+      </div>
+
+      <div class="hero__media">
+        <!--
+          Place your M3ORA showreel file at: portfolio/m3ora-showreel.mp4
+          Once the file exists, this video plays automatically and the
+          placeholder below is hidden by script.js. Until then, the
+          placeholder is shown and no broken video element appears.
+        -->
+        <video class="hero__media-video" id="heroVideo" autoplay muted loop playsinline preload="none">
+          <source src="portfolio/video/ankit_yt.mp4" type="video/mp4">
+        </video>
+
+        <div class="hero__media-placeholder" id="heroPlaceholder" role="img" aria-label="M3ORA showreel placeholder">
+          <div class="hero__media-frame">
+            <span class="hero__media-mark">M3ORA</span>
+            <span class="hero__media-label">Showreel — add portfolio/m3ora-showreel.mp4</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         BRAND STATEMENT
+    ====================================================== -->
+    <section class="statement">
+      <div class="statement__container">
+        <h2 class="statement__headline">
+          <span class="reveal-word">Every</span> <span class="reveal-word">idea</span>
+          <span class="reveal-word">has</span> <span class="reveal-word">a</span>
+          <span class="reveal-word">story.</span><br>
+          <span class="reveal-word statement__accent">We</span>
+          <span class="reveal-word statement__accent">make</span>
+          <span class="reveal-word statement__accent">it</span>
+          <span class="reveal-word statement__accent">memorable.</span>
+        </h2>
+        <p class="statement__body reveal-up">
+          M3ORA is a creative studio built for brands that refuse to blend in. We shape
+          ideas into visuals, motion and digital experiences designed to be noticed,
+          understood and remembered — long after the scroll continues.
+        </p>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         REELS / PORTFOLIO (structure ready, no fake projects)
+
+         HOW TO ADD A REAL REEL LATER:
+         1. Drop the vertical (9:16) video file into /portfolio, e.g. portfolio/reel-01.mp4
+         2. On the matching .reel-card below, add: data-video="portfolio/reel-01.mp4"
+         3. Add class "reel-card--ready" to that .reel-card
+         4. Replace the data-title text with the real project name (optional caption)
+         The click-to-play modal below (#reelModal) will handle the rest automatically —
+         no other markup changes are required.
+    ====================================================== -->
+    <section class="reels" id="work">
+      <div class="section-head reveal-up">
+        <p class="section-head__eyebrow">Portfolio</p>
+        <h2 class="section-head__title">Visuals — That Move</h2>
+      </div>
+      <p class="reels__note reveal-up">
+        A selection of our work across video editing, motion graphics and creative content — 
+        crafted to turn ideas into memorable visuals.
+      </p>
+
+      <div class="reels__grid">
+        <div class="reel-card reveal-up" data-visual="1">
+    <div class="reel-card__media">
+        <video
+            src="portfolio/video/savefy_1.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto">
+        </video>
+
+    </div>
+</div>
+        <div class="reel-card reveal-up" data-visual="2">
+          <div class="reel-card__media">
+            <video
+            src="portfolio/video/TVS x Shahzeb R4_1 (1).mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto">
+        </video>
+          </div>
+        </div>
+        <div class="reel-card reveal-up" data-visual="3">
+          <div class="reel-card__media">
+           <video
+            src="portfolio/video/chanakya Maharana Pratap.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto">
+        </video>
+          </div>
+        </div>
+        <div class="reel-card reveal-up" data-visual="4">
+          <div class="reel-card__media">
+            <video
+            src="portfolio/video/leo ( rohit sharma).mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto">
+        </video>
+          </div>
+        </div>
+        <div class="reel-card reveal-up" data-visual="5">
+          <div class="reel-card__media">
+           <video
+            src="portfolio/video/cloth_1.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto">
+        </video>
+          </div>
+        </div>
+        <div class="reel-card reveal-up" data-visual="6">
+          <div class="reel-card__media">
+            <video
+            src="portfolio/video/medbell final v1_1.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto">
+        </video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reel lightbox/modal player — inert until a .reel-card gets a data-video attribute -->
+    <div class="reel-modal" id="reelModal" aria-hidden="true">
+      <div class="reel-modal__inner">
+        <button class="reel-modal__close" id="reelModalClose" aria-label="Close video">&times;</button>
+        <video class="reel-modal__video" id="reelModalVideo" playsinline controls></video>
+      </div>
+    </div>
+
+    <!-- =====================================================
+         SERVICES
+    ====================================================== -->
+    <section class="services" id="services">
+      <div class="section-head reveal-up">
+        <p class="section-head__eyebrow">Capabilities</p>
+        <h2 class="section-head__title">What We Create</h2>
+      </div>
+
+      <ul class="services__list">
+        <li class="services__item reveal-up" data-visual="1">
+          <span class="services__index">01</span>
+          <span class="services__name">Branding</span>
+          <span class="services__arrow" aria-hidden="true">→</span>
+        </li>
+        <li class="services__item reveal-up" data-visual="2">
+          <span class="services__index">02</span>
+          <span class="services__name">Graphic Design</span>
+          <span class="services__arrow" aria-hidden="true">→</span>
+        </li>
+        <li class="services__item reveal-up" data-visual="3">
+          <span class="services__index">03</span>
+          <span class="services__name">Web Design</span>
+          <span class="services__arrow" aria-hidden="true">→</span>
+        </li>
+        <li class="services__item reveal-up" data-visual="4">
+          <span class="services__index">04</span>
+          <span class="services__name">UI/UX</span>
+          <span class="services__arrow" aria-hidden="true">→</span>
+        </li>
+        <li class="services__item services__item--featured reveal-up" data-visual="5">
+          <span class="services__index">05</span>
+          <span class="services__name">Video Editing</span>
+          <span class="services__arrow" aria-hidden="true">→</span>
+        </li>
+        <li class="services__item services__item--featured reveal-up" data-visual="6">
+          <span class="services__index">06</span>
+          <span class="services__name">Motion Graphics</span>
+          <span class="services__arrow" aria-hidden="true">→</span>
+        </li>
+        <li class="services__item services__item--featured reveal-up" data-visual="1">
+          <span class="services__index">07</span>
+          <span class="services__name">3D Animation</span>
+          <span class="services__arrow" aria-hidden="true">→</span>
+        </li>
+        <li class="services__item reveal-up" data-visual="2">
+          <span class="services__index">08</span>
+          <span class="services__name">Product Visuals</span>
+          <span class="services__arrow" aria-hidden="true">→</span>
+        </li>
+        <li class="services__item reveal-up" data-visual="3">
+          <span class="services__index">09</span>
+          <span class="services__name">Advertising</span>
+          <span class="services__arrow" aria-hidden="true">→</span>
+        </li>
+        <li class="services__item reveal-up" data-visual="4">
+          <span class="services__index">10</span>
+          <span class="services__name">Social Media</span>
+          <span class="services__arrow" aria-hidden="true">→</span>
+        </li>
+        <li class="services__item reveal-up" data-visual="5">
+          <span class="services__index">11</span>
+          <span class="services__name">Creative Campaigns</span>
+          <span class="services__arrow" aria-hidden="true">→</span>
+        </li>
+        <li class="services__item reveal-up" data-visual="6">
+          <span class="services__index">12</span>
+          <span class="services__name">Digital Content</span>
+          <span class="services__arrow" aria-hidden="true">→</span>
+        </li>
+      </ul>
+
+      <div class="services__preview" id="servicesPreview" aria-hidden="true"></div>
+    </section>
+
+    <!-- =====================================================
+         ABOUT
+    ====================================================== -->
+    <section class="about" id="about">
+      <div class="about__container">
+        <div class="about__heading reveal-up">
+          <h2>Mind.<br>Motion.<br>Meaning.</h2>
+        </div>
+        <div class="about__body reveal-up">
+          <p>
+            M3ORA is a creative studio built around the belief that great ideas deserve
+            more than attention — they deserve to be remembered.
+          </p>
+          <p>
+            We combine creative thinking, visual design, motion, storytelling and digital
+            experiences to help brands communicate with clarity and impact.
+          </p>
+          <div class="about__visual" aria-hidden="true">
+            <img src="water-mark-logo.png" alt="" class="about__mark">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         TEAM
+
+         Ankit Gupta uses assets/team/ankit-gupta.png as provided.
+         Noor Alam and Raushan Singh currently use a lettermark placeholder
+         (no individual solo photo was available for them yet) — swap the
+         placeholder <div class="team-card__placeholder"> for a real
+         <img class="team-card__image"> once their photos are ready.
+    ====================================================== -->
+    <section class="team" id="team">
+      <div class="section-head reveal-up">
+        <p class="section-head__eyebrow">The Studio</p>
+        <h2 class="section-head__title">Three Founders. One Studio.</h2>
+      </div>
+
+      <div class="team__grid">
+        <article class="team-card reveal-up">
+          <div class="team-card__media">
+            <img src="image/1st.jpg" alt="Ankit Gupta" class="team-card__image">
+          </div>
+          <div class="team-card__info">
+            <h3 class="team-card__name">Ankit Gupta</h3>
+            <p class="team-card__role">Co-Founder &amp; Creative Director</p>
+            <p class="team-card__desc">Leads creative direction, video editing, motion design, client communication and overall project quality.</p>
+          </div>
+        </article>
+
+        <article class="team-card reveal-up">
+          <div class="team-card__media">
+            <img src="image/3rd.jpg" alt="Noor Alam" class="team-card__image">
+          </div>
+          <div class="team-card__info">
+            <h3 class="team-card__name">Noor Alam</h3>
+            <p class="team-card__role">Co-Founder &amp; Technology Lead</p>
+            <p class="team-card__desc">Handles website development, coding, technical implementation and digital solutions.</p>
+          </div>
+        </article>
+
+        <article class="team-card reveal-up">
+          <div class="team-card__media">
+            <img src="image/2nd.jpg" alt="Raushan Singh" class="team-card__image">
+          </div>
+          <div class="team-card__info">
+            <h3 class="team-card__name">Raushan Singh</h3>
+            <p class="team-card__role">Co-Founder &amp; Content &amp; SEO Lead</p>
+            <p class="team-card__desc">Handles content strategy, copywriting, SEO, research and digital content planning.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         PROCESS
+    ====================================================== -->
+    <section class="process" id="process">
+      <div class="section-head reveal-up">
+        <p class="section-head__eyebrow">Approach</p>
+        <h2 class="section-head__title">How We Create</h2>
+      </div>
+
+      <ol class="process__list">
+        <li class="process__item reveal-up">
+          <span class="process__index">01</span>
+          <div class="process__content">
+            <h3>Discover</h3>
+            <p>Understanding the brand, audience and objective.</p>
+          </div>
+        </li>
+        <li class="process__item reveal-up">
+          <span class="process__index">02</span>
+          <div class="process__content">
+            <h3>Define</h3>
+            <p>Finding the right creative direction and visual language.</p>
+          </div>
+        </li>
+        <li class="process__item reveal-up">
+          <span class="process__index">03</span>
+          <div class="process__content">
+            <h3>Create</h3>
+            <p>Turning ideas into design, motion and meaningful visual experiences.</p>
+          </div>
+        </li>
+        <li class="process__item reveal-up">
+          <span class="process__index">04</span>
+          <div class="process__content">
+            <h3>Refine</h3>
+            <p>Polishing every detail for clarity, quality and impact.</p>
+          </div>
+        </li>
+        <li class="process__item reveal-up">
+          <span class="process__index">05</span>
+          <div class="process__content">
+            <h3>Deliver</h3>
+            <p>Creating work ready to connect, communicate and perform.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- =====================================================
+         WHY M3ORA
+    ====================================================== -->
+    <section class="why">
+      <div class="why__container">
+        <p class="why__line reveal-up">Creative enough<br>to stand out.</p>
+        <p class="why__line reveal-up">Professional enough<br>to be trusted.</p>
+        <p class="why__line reveal-up">Human enough<br>to connect.</p>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         INDUSTRIES
+    ====================================================== -->
+    <section class="industries">
+      <div class="section-head section-head--center reveal-up">
+        <h2 class="section-head__title">Built for brands that want to be remembered.</h2>
+      </div>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span>Startups</span><span>Brands</span><span>D2C</span><span>E-commerce</span>
+          <span>Real Estate</span><span>Education</span><span>Healthcare</span><span>Technology</span>
+          <span>SaaS</span><span>Finance</span><span>Fashion</span><span>Beauty</span>
+          <span>Food</span><span>Hospitality</span><span>Automotive</span><span>Creators</span>
+          <span>Personal Brands</span><span>Events</span><span>Agencies</span>
+        </div>
+        <div class="marquee__track" aria-hidden="true">
+          <span>Startups</span><span>Brands</span><span>D2C</span><span>E-commerce</span>
+          <span>Real Estate</span><span>Education</span><span>Healthcare</span><span>Technology</span>
+          <span>SaaS</span><span>Finance</span><span>Fashion</span><span>Beauty</span>
+          <span>Food</span><span>Hospitality</span><span>Automotive</span><span>Creators</span>
+          <span>Personal Brands</span><span>Events</span><span>Agencies</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         FINAL CTA
+    ====================================================== -->
+    <section class="final-cta" id="contact">
+      <div class="final-cta__container">
+        <p class="final-cta__eyebrow reveal-up">Have an idea?</p>
+        <h2 class="final-cta__headline reveal-up">Let's make it<br>memorable.</h2>
+        <p class="final-cta__body reveal-up">
+          Tell us what you're building, launching or imagining. We'll turn the idea
+          into a visual experience worth remembering.
+        </p>
+
+        <a href="mailto:ankitstockvibe@gmail.com" class="btn btn--primary btn--light final-cta__btn reveal-up">Start a Project</a>
+
+        <div class="final-cta__contact reveal-up">
+          <div>
+            <span class="final-cta__label">Email</span>
+            <a href="mailto:ankitstockvibe@gmail.com">ankitstockvibe@gmail.com</a>
+          </div>
+          <div>
+            <span class="final-cta__label">Phone</span>
+            <a href="tel:+918434959801">84349 59801</a>,
+            <a href="tel:+919508544535">95085 44535</a>,
+            <a href="tel:+918873181698">88731 81698</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <img src="watermark2.png" alt="M3ORA Creative Studio" class="footer__logo">
+        <p class="footer__tagline">Make Ideas Memorable.</p>
+      </div>
+
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#team">Team</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="footer__social" aria-label="Social media">
+        <a href="#" aria-label="M3ORA on Instagram">Instagram</a>
+        <a href="#" aria-label="M3ORA on LinkedIn">LinkedIn</a>
+        <a href="#" aria-label="M3ORA on Behance">Behance</a>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; 2026 M3ORA Creative Studio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
