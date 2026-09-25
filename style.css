@@ -1536,3 +1536,10 @@ body.reduce-motion .marquee__track { animation: none; }
 @media (pointer: coarse) {
   .cursor-dot, .cursor-ring { display: none; }
 }
+/* HIDE UNWANTED SERVICE DECORATIVE SHAPE */
+.services__visual,
+.services__media,
+.services__preview,
+.services__item > div:not(.services__content) {
+    display: none !important;
+}
