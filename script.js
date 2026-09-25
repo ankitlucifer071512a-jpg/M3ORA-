@@ -133,58 +133,297 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* -----------------------------------------------------
-     3c. REEL LIGHTBOX / MODAL
-     Only cards with a `data-video` attribute (added once a real reel
-     file exists — see the HTML comment above the reels grid) become
-     clickable. Placeholder "Coming Soon" cards stay inert.
+     3c. PORTFOLIO DATA
+     One entry per .reel-card, matched by its data-project index.
+     Used to fill in the case-study modal below.
   ----------------------------------------------------- */
-  const reelModal = document.getElementById('reelModal');
-  const reelModalVideo = document.getElementById('reelModalVideo');
-  const reelModalClose = document.getElementById('reelModalClose');
-  const reelCards = document.querySelectorAll('.reel-card[data-video]');
+  const PROJECTS = [
+    {
+      name: 'Jao Chashma',
+      category: 'Brand / Social Media / Video',
+      video: 'portfolio/video/savefy.mp4',
+      intro: 'Social media video created for Jao Chashma, an eyewear brand based in Qatar.',
+      details: { 'Client / Brand': 'Jao Chashma', 'Industry': 'Eyewear', 'Market': 'Qatar', 'Type': 'Social Media / Video' },
+      work: 'Video editing and motion graphics created to present the eyewear brand in a clean, social-media-ready format.'
+    },
+    {
+      name: 'TVS',
+      category: 'Automotive / Brand Video / Social Media',
+      video: 'portfolio/video/tvs.mp4',
+      intro: 'Automotive-focused visual content created for TVS as part of agency production work.',
+      details: { 'Client / Brand': 'TVS', 'Industry': 'Automotive', 'Type': 'Brand Video / Social Media' },
+      work: 'Visual content produced for TVS during agency production work, focused on automotive brand storytelling.'
+    },
+    {
+      name: 'Chanakya IAS',
+      category: 'Education / Social Media / Video',
+      video: 'portfolio/video/chanakya_ias.mp4',
+      intro: 'Educational social media content created for Chanakya IAS as part of agency production work.',
+      details: { 'Client / Brand': 'Chanakya IAS', 'Industry': 'Education', 'Type': 'Social Media / Video' },
+      work: 'Video content built to communicate exam-prep and educational messaging for a social media audience.'
+    },
+    {
+      name: 'Logo / Card Creative',
+      category: 'Brand Creative / Promotional Visual',
+      video: 'portfolio/video/leo.mp4',
+      intro: 'A logo/card-style promotional creative featuring Rohit Sharma.',
+      details: { 'Type': 'Brand Creative / Promotional Visual', 'Format': 'Logo / Card Video' },
+      work: 'A motion-driven logo/card creative built around a promotional visual featuring Rohit Sharma.'
+    },
+    {
+      name: 'Clothing & Fashion Blog',
+      category: 'Fashion / Social Media / Content',
+      video: 'portfolio/video/cloth_2_1.mp4',
+      intro: 'Fashion-focused social media content created for an Australia-based clothing brand/blog.',
+      details: { 'Industry': 'Fashion', 'Market': 'Australia', 'Type': 'Social Media / Content' },
+      work: 'Social content edited for a fashion/clothing blog, styled for an Australian audience.'
+    },
+    {
+      name: 'MedBell',
+      category: 'Healthcare / App / Product Video',
+      video: 'portfolio/video/medbell.mp4',
+      intro: 'Product-focused visual content created for MedBell, a healthcare app designed around medicine and health-related assistance.',
+      details: { 'Client / Brand': 'MedBell', 'Industry': 'Healthcare', 'Type': 'App / Product Video' },
+      work: 'Product video created to communicate what the MedBell app does and how it supports medicine and health-related assistance.'
+    }
+  ];
 
-  const openReelModal = (src) => {
-    if (!reelModal || !reelModalVideo) return;
-    reelModalVideo.src = src;
-    reelModal.classList.add('is-open');
-    reelModal.setAttribute('aria-hidden', 'false');
+  /* -----------------------------------------------------
+     3d. SERVICES DATA
+     One entry per .services__item, matched by its data-service index.
+  ----------------------------------------------------- */
+  const SERVICES = [
+    {
+      name: 'Branding',
+      desc: 'Visual identity systems built to give a brand a clear, consistent presence wherever it shows up.',
+      whatWeDo: ['Logo & identity design', 'Brand guidelines', 'Visual language & tone', 'Brand assets for digital use'],
+      idealFor: ['Startups', 'Brands', 'D2C', 'Personal Brands']
+    },
+    {
+      name: 'Graphic Design',
+      desc: 'Design support for the everyday visuals a brand needs across its channels.',
+      whatWeDo: ['Social media creatives', 'Print & digital collateral', 'Presentation & pitch design', 'Packaging visuals'],
+      idealFor: ['Startups', 'E-commerce', 'Food', 'Beauty']
+    },
+    {
+      name: 'Web Design',
+      desc: 'Clean, modern websites designed to represent a brand properly online.',
+      whatWeDo: ['Website design', 'Landing pages', 'Responsive layouts', 'Design-to-development handoff'],
+      idealFor: ['Startups', 'Agencies', 'SaaS', 'Technology']
+    },
+    {
+      name: 'UI/UX',
+      desc: 'Interface and experience design focused on clarity and ease of use.',
+      whatWeDo: ['App & product UI', 'User flows & wireframes', 'Interaction design', 'Design systems'],
+      idealFor: ['SaaS', 'Technology', 'Healthcare', 'Startups']
+    },
+    {
+      name: 'Video Editing',
+      desc: 'Story-driven video editing designed for social media, brands, campaigns and digital content.',
+      whatWeDo: ['Social media videos', 'Brand videos', 'Reels', 'Corporate videos', 'Product videos', 'Creative content'],
+      idealFor: ['Brands', 'E-commerce', 'Education', 'Creators']
+    },
+    {
+      name: 'Motion Graphics',
+      desc: 'Animated visuals that add movement, rhythm and clarity to a brand\u2019s message.',
+      whatWeDo: ['Logo animation', 'Explainer motion graphics', 'Animated social content', 'Title & typography animation'],
+      idealFor: ['Technology', 'SaaS', 'Education', 'Agencies']
+    },
+    {
+      name: '3D Animation',
+      desc: '3D visuals and animation used to bring products and ideas to life.',
+      whatWeDo: ['Product 3D visuals', '3D motion sequences', 'Render-based creative content'],
+      idealFor: ['E-commerce', 'Technology', 'Automotive']
+    },
+    {
+      name: 'Product Visuals',
+      desc: 'Clean, focused visual content built around a product.',
+      whatWeDo: ['Product photography-style visuals', 'Catalogue-ready content', 'Product-focused video'],
+      idealFor: ['E-commerce', 'Fashion', 'Food', 'Beauty']
+    },
+    {
+      name: 'Advertising',
+      desc: 'Creative built to support paid and organic advertising campaigns.',
+      whatWeDo: ['Ad creative design', 'Video ads', 'Campaign visuals'],
+      idealFor: ['Brands', 'D2C', 'E-commerce', 'Startups']
+    },
+    {
+      name: 'Social Media',
+      desc: 'Ongoing content designed to keep a brand\u2019s social presence sharp and consistent.',
+      whatWeDo: ['Content calendars & creatives', 'Reels & short-form video', 'Page design & templates'],
+      idealFor: ['Brands', 'Creators', 'Personal Brands', 'Hospitality']
+    },
+    {
+      name: 'Creative Campaigns',
+      desc: 'End-to-end creative direction for a specific idea, launch or moment.',
+      whatWeDo: ['Concept & creative direction', 'Multi-format campaign assets', 'Cross-platform rollout support'],
+      idealFor: ['Brands', 'Events', 'Startups', 'Agencies']
+    },
+    {
+      name: 'Digital Content',
+      desc: 'General digital content production for brands that need a steady stream of visuals.',
+      whatWeDo: ['Short-form video', 'Digital creatives', 'Content built for multiple platforms'],
+      idealFor: ['Startups', 'Brands', 'Technology', 'Creators']
+    }
+  ];
+
+  /* -----------------------------------------------------
+     3e. PORTFOLIO VIDEO PLAY/PAUSE (tap/click to play — no autoplay)
+  ----------------------------------------------------- */
+  document.querySelectorAll('.reel-card__media').forEach((media) => {
+    const video = media.querySelector('video');
+    if (!video) return;
+
+    const togglePlay = () => {
+      if (video.paused) {
+        // Pause any other reel currently playing, Instagram-style single playback
+        document.querySelectorAll('.reel-card__media video').forEach((v) => {
+          if (v !== video && !v.paused) {
+            v.pause();
+            v.closest('.reel-card__media').classList.remove('is-playing');
+          }
+        });
+        video.play().catch(() => {});
+        media.classList.add('is-playing');
+      } else {
+        video.pause();
+        media.classList.remove('is-playing');
+      }
+    };
+
+    media.addEventListener('click', togglePlay);
+    video.addEventListener('ended', () => media.classList.remove('is-playing')); // loop attr replays; class reset is a safety net
+    video.addEventListener('pause', () => media.classList.remove('is-playing'));
+    video.addEventListener('play', () => media.classList.add('is-playing'));
+  });
+
+  /* -----------------------------------------------------
+     3f. CASE STUDY MODAL
+  ----------------------------------------------------- */
+  const caseModal = document.getElementById('caseModal');
+  const caseModalVideo = document.getElementById('caseModalVideo');
+  const caseModalCategory = document.getElementById('caseModalCategory');
+  const caseModalTitle = document.getElementById('caseModalTitle');
+  const caseModalIntro = document.getElementById('caseModalIntro');
+  const caseModalDetails = document.getElementById('caseModalDetails');
+  const caseModalWork = document.getElementById('caseModalWork');
+  const caseModalClose = document.getElementById('caseModalClose');
+  const caseModalBack = document.getElementById('caseModalBack');
+
+  const openCaseModal = (index) => {
+    const project = PROJECTS[index];
+    if (!project || !caseModal) return;
+
+    // Pause any reel-card video currently playing behind the modal
+    document.querySelectorAll('.reel-card__media video').forEach((v) => {
+      if (!v.paused) {
+        v.pause();
+        v.closest('.reel-card__media').classList.remove('is-playing');
+      }
+    });
+
+    caseModalCategory.textContent = project.category;
+    caseModalTitle.textContent = project.name;
+    caseModalIntro.textContent = project.intro;
+    caseModalWork.textContent = project.work;
+
+    caseModalDetails.innerHTML = '';
+    Object.entries(project.details).forEach(([label, value]) => {
+      const dt = document.createElement('dt');
+      dt.textContent = label;
+      const dd = document.createElement('dd');
+      dd.textContent = value;
+      caseModalDetails.appendChild(dt);
+      caseModalDetails.appendChild(dd);
+    });
+
+    caseModalVideo.src = project.video;
+
+    caseModal.classList.add('is-open');
+    caseModal.setAttribute('aria-hidden', 'false');
+    caseModal.querySelector('.case-modal__scroll').scrollTop = 0;
     body.style.overflow = 'hidden';
-    reelModalVideo.play().catch(() => {});
   };
 
-  const closeReelModal = () => {
-    if (!reelModal || !reelModalVideo) return;
-    reelModal.classList.remove('is-open');
-    reelModal.setAttribute('aria-hidden', 'true');
-    reelModalVideo.pause();
-    reelModalVideo.removeAttribute('src');
-    reelModalVideo.load();
+  const closeCaseModal = () => {
+    if (!caseModal) return;
+    caseModal.classList.remove('is-open');
+    caseModal.setAttribute('aria-hidden', 'true');
+    caseModalVideo.pause();
+    caseModalVideo.removeAttribute('src');
+    caseModalVideo.load();
     body.style.overflow = '';
   };
 
-  reelCards.forEach((card) => {
-    card.classList.add('reel-card--ready');
-    card.setAttribute('tabindex', '0');
-    card.setAttribute('role', 'button');
-    card.addEventListener('click', () => openReelModal(card.getAttribute('data-video')));
-    card.addEventListener('keydown', (e) => {
+  document.querySelectorAll('.reel-card__case-btn').forEach((btn) => {
+    btn.addEventListener('click', () => openCaseModal(Number(btn.getAttribute('data-project'))));
+  });
+
+  if (caseModalClose) caseModalClose.addEventListener('click', closeCaseModal);
+  if (caseModalBack) caseModalBack.addEventListener('click', closeCaseModal);
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && caseModal && caseModal.classList.contains('is-open')) closeCaseModal();
+  });
+
+  /* -----------------------------------------------------
+     3g. SERVICE DETAIL MODAL
+  ----------------------------------------------------- */
+  const serviceModal = document.getElementById('serviceModal');
+  const serviceModalIndex = document.getElementById('serviceModalIndex');
+  const serviceModalTitle = document.getElementById('serviceModalTitle');
+  const serviceModalDesc = document.getElementById('serviceModalDesc');
+  const serviceModalWhat = document.getElementById('serviceModalWhat');
+  const serviceModalIdeal = document.getElementById('serviceModalIdeal');
+  const serviceModalClose = document.getElementById('serviceModalClose');
+
+  const openServiceModal = (index) => {
+    const service = SERVICES[index];
+    if (!service || !serviceModal) return;
+
+    serviceModalIndex.textContent = 'Service ' + String(index + 1).padStart(2, '0');
+    serviceModalTitle.textContent = service.name;
+    serviceModalDesc.textContent = service.desc;
+
+    serviceModalWhat.innerHTML = '';
+    service.whatWeDo.forEach((item) => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      serviceModalWhat.appendChild(li);
+    });
+
+    serviceModalIdeal.innerHTML = '';
+    service.idealFor.forEach((item) => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      serviceModalIdeal.appendChild(li);
+    });
+
+    serviceModal.classList.add('is-open');
+    serviceModal.setAttribute('aria-hidden', 'false');
+    serviceModal.querySelector('.service-modal__scroll').scrollTop = 0;
+    body.style.overflow = 'hidden';
+  };
+
+  const closeServiceModal = () => {
+    if (!serviceModal) return;
+    serviceModal.classList.remove('is-open');
+    serviceModal.setAttribute('aria-hidden', 'true');
+    body.style.overflow = '';
+  };
+
+  document.querySelectorAll('.services__item').forEach((item) => {
+    item.addEventListener('click', () => openServiceModal(Number(item.getAttribute('data-service'))));
+    item.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        openReelModal(card.getAttribute('data-video'));
+        openServiceModal(Number(item.getAttribute('data-service')));
       }
     });
   });
 
-  if (reelModalClose) reelModalClose.addEventListener('click', closeReelModal);
-  if (reelModal) {
-    reelModal.addEventListener('click', (e) => {
-      if (e.target === reelModal) closeReelModal();
-    });
-  }
+  if (serviceModalClose) serviceModalClose.addEventListener('click', closeServiceModal);
   window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && reelModal && reelModal.classList.contains('is-open')) {
-      closeReelModal();
-    }
+    if (e.key === 'Escape' && serviceModal && serviceModal.classList.contains('is-open')) closeServiceModal();
   });
 
   /* -----------------------------------------------------

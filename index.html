@@ -130,15 +130,13 @@
     </section>
 
     <!-- =====================================================
-         REELS / PORTFOLIO (structure ready, no fake projects)
+         REELS / PORTFOLIO
 
-         HOW TO ADD A REAL REEL LATER:
-         1. Drop the vertical (9:16) video file into /portfolio, e.g. portfolio/reel-01.mp4
-         2. On the matching .reel-card below, add: data-video="portfolio/reel-01.mp4"
-         3. Add class "reel-card--ready" to that .reel-card
-         4. Replace the data-title text with the real project name (optional caption)
-         The click-to-play modal below (#reelModal) will handle the rest automatically —
-         no other markup changes are required.
+         Each .reel-card holds a real project video. Tap/click the video
+         to play or pause it (no autoplay). "View Case Study" opens the
+         full project details in the #caseModal overlay below — content
+         for each project lives in the PROJECTS array in script.js,
+         matched by the data-project index on each card.
     ====================================================== -->
     <section class="reels" id="work">
       <div class="section-head reveal-up">
@@ -151,87 +149,149 @@
       </p>
 
       <div class="reels__grid">
-        <div class="reel-card reveal-up" data-visual="1">
-    <div class="reel-card__media">
-        <video
-            src="portfolio/video/savefy.mp4"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="auto">
-        </video>
+        <div class="reel-card reveal-up" data-visual="1" data-project="0">
+          <div class="reel-card__media">
+            <video
+              src="portfolio/video/savefy.mp4"
+              muted
+              loop
+              playsinline
+              preload="metadata"></video>
+            <span class="reel-card__play" aria-hidden="true">&#9658;</span>
+          </div>
+          <div class="reel-card__info">
+            <p class="reel-card__category">Brand / Social Media / Video</p>
+            <h3 class="reel-card__name">Jao Chashma</h3>
+            <p class="reel-card__desc">Social media video created for Jao Chashma, an eyewear brand based in Qatar.</p>
+            <button class="reel-card__case-btn" type="button" data-project="0">View Case Study &#8594;</button>
+          </div>
+        </div>
 
-    </div>
-</div>
-        <div class="reel-card reveal-up" data-visual="2">
+        <div class="reel-card reveal-up" data-visual="2" data-project="1">
           <div class="reel-card__media">
             <video
-            src="portfolio/video/tvs.mp4"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="auto">
-        </video>
+              src="portfolio/video/tvs.mp4"
+              muted
+              loop
+              playsinline
+              preload="metadata"></video>
+            <span class="reel-card__play" aria-hidden="true">&#9658;</span>
+          </div>
+          <div class="reel-card__info">
+            <p class="reel-card__category">Automotive / Brand Video / Social Media</p>
+            <h3 class="reel-card__name">TVS</h3>
+            <p class="reel-card__desc">Automotive-focused visual content created for TVS as part of agency production work.</p>
+            <button class="reel-card__case-btn" type="button" data-project="1">View Case Study &#8594;</button>
           </div>
         </div>
-        <div class="reel-card reveal-up" data-visual="3">
-          <div class="reel-card__media">
-           <video
-            src="portfolio/video/chanakya_ias.mp4"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="auto">
-        </video>
-          </div>
-        </div>
-        <div class="reel-card reveal-up" data-visual="4">
+
+        <div class="reel-card reveal-up" data-visual="3" data-project="2">
           <div class="reel-card__media">
             <video
-            src="portfolio/video/leo.mp4"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="auto">
-        </video>
+              src="portfolio/video/chanakya_ias.mp4"
+              muted
+              loop
+              playsinline
+              preload="metadata"></video>
+            <span class="reel-card__play" aria-hidden="true">&#9658;</span>
+          </div>
+          <div class="reel-card__info">
+            <p class="reel-card__category">Education / Social Media / Video</p>
+            <h3 class="reel-card__name">Chanakya IAS</h3>
+            <p class="reel-card__desc">Educational social media content created for Chanakya IAS as part of agency production work.</p>
+            <button class="reel-card__case-btn" type="button" data-project="2">View Case Study &#8594;</button>
           </div>
         </div>
-        <div class="reel-card reveal-up" data-visual="5">
-          <div class="reel-card__media">
-           <video
-            src="portfolio/video/cloth_2_1.mp4"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="auto">
-        </video>
-          </div>
-        </div>
-        <div class="reel-card reveal-up" data-visual="6">
+
+        <div class="reel-card reveal-up" data-visual="4" data-project="3">
           <div class="reel-card__media">
             <video
-            src="portfolio/video/medbell.mp4"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="auto">
-        </video>
+              src="portfolio/video/leo.mp4"
+              muted
+              loop
+              playsinline
+              preload="metadata"></video>
+            <span class="reel-card__play" aria-hidden="true">&#9658;</span>
+          </div>
+          <div class="reel-card__info">
+            <p class="reel-card__category">Brand Creative / Promotional Visual</p>
+            <h3 class="reel-card__name">Logo / Card Creative</h3>
+            <p class="reel-card__desc">A logo/card-style promotional creative featuring Rohit Sharma.</p>
+            <button class="reel-card__case-btn" type="button" data-project="3">View Case Study &#8594;</button>
+          </div>
+        </div>
+
+        <div class="reel-card reveal-up" data-visual="5" data-project="4">
+          <div class="reel-card__media">
+            <video
+              src="portfolio/video/cloth_2_1.mp4"
+              muted
+              loop
+              playsinline
+              preload="metadata"></video>
+            <span class="reel-card__play" aria-hidden="true">&#9658;</span>
+          </div>
+          <div class="reel-card__info">
+            <p class="reel-card__category">Fashion / Social Media / Content</p>
+            <h3 class="reel-card__name">Clothing &amp; Fashion Blog</h3>
+            <p class="reel-card__desc">Fashion-focused social media content created for an Australia-based clothing brand/blog.</p>
+            <button class="reel-card__case-btn" type="button" data-project="4">View Case Study &#8594;</button>
+          </div>
+        </div>
+
+        <div class="reel-card reveal-up" data-visual="6" data-project="5">
+          <div class="reel-card__media">
+            <video
+              src="portfolio/video/medbell.mp4"
+              muted
+              loop
+              playsinline
+              preload="metadata"></video>
+            <span class="reel-card__play" aria-hidden="true">&#9658;</span>
+          </div>
+          <div class="reel-card__info">
+            <p class="reel-card__category">Healthcare / App / Product Video</p>
+            <h3 class="reel-card__name">MedBell</h3>
+            <p class="reel-card__desc">Product-focused visual content created for MedBell, a healthcare app designed around medicine and health-related assistance.</p>
+            <button class="reel-card__case-btn" type="button" data-project="5">View Case Study &#8594;</button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Reel lightbox/modal player — inert until a .reel-card gets a data-video attribute -->
-    <div class="reel-modal" id="reelModal" aria-hidden="true">
-      <div class="reel-modal__inner">
-        <button class="reel-modal__close" id="reelModalClose" aria-label="Close video">&times;</button>
-        <video class="reel-modal__video" id="reelModalVideo" playsinline controls></video>
+    <!-- Case study overlay — content is populated dynamically by script.js
+         (PROJECTS array) when a "View Case Study" button is clicked. -->
+    <div class="case-modal" id="caseModal" aria-hidden="true">
+      <div class="case-modal__scroll">
+        <div class="case-modal__inner">
+          <button class="case-modal__close" id="caseModalClose" aria-label="Close case study">&times;</button>
+
+          <p class="case-modal__eyebrow" id="caseModalCategory"></p>
+          <h2 class="case-modal__title" id="caseModalTitle"></h2>
+
+          <div class="case-modal__media">
+            <video class="case-modal__video" id="caseModalVideo" muted loop playsinline controls></video>
+          </div>
+
+          <p class="case-modal__intro" id="caseModalIntro"></p>
+
+          <div class="case-modal__details">
+            <h3 class="case-modal__heading">Project Details</h3>
+            <dl class="case-modal__grid" id="caseModalDetails"></dl>
+          </div>
+
+          <div class="case-modal__work">
+            <h3 class="case-modal__heading">The Work</h3>
+            <p id="caseModalWork"></p>
+          </div>
+
+          <div class="case-modal__images">
+            <div class="case-modal__placeholder">PROJECT IMAGE 01 — 1:1</div>
+            <div class="case-modal__placeholder">PROJECT IMAGE 02 — 1:1</div>
+          </div>
+
+          <button class="btn btn--outline case-modal__back" id="caseModalBack">&#8592; Back to Work</button>
+        </div>
       </div>
     </div>
 
@@ -245,62 +305,62 @@
       </div>
 
       <ul class="services__list">
-        <li class="services__item reveal-up" data-visual="1">
+        <li class="services__item reveal-up" data-visual="1" data-service="0" role="button" tabindex="0">
           <span class="services__index">01</span>
           <span class="services__name">Branding</span>
           <span class="services__arrow" aria-hidden="true">→</span>
         </li>
-        <li class="services__item reveal-up" data-visual="2">
+        <li class="services__item reveal-up" data-visual="2" data-service="1" role="button" tabindex="0">
           <span class="services__index">02</span>
           <span class="services__name">Graphic Design</span>
           <span class="services__arrow" aria-hidden="true">→</span>
         </li>
-        <li class="services__item reveal-up" data-visual="3">
+        <li class="services__item reveal-up" data-visual="3" data-service="2" role="button" tabindex="0">
           <span class="services__index">03</span>
           <span class="services__name">Web Design</span>
           <span class="services__arrow" aria-hidden="true">→</span>
         </li>
-        <li class="services__item reveal-up" data-visual="4">
+        <li class="services__item reveal-up" data-visual="4" data-service="3" role="button" tabindex="0">
           <span class="services__index">04</span>
           <span class="services__name">UI/UX</span>
           <span class="services__arrow" aria-hidden="true">→</span>
         </li>
-        <li class="services__item services__item--featured reveal-up" data-visual="5">
+        <li class="services__item services__item--featured reveal-up" data-visual="5" data-service="4" role="button" tabindex="0">
           <span class="services__index">05</span>
           <span class="services__name">Video Editing</span>
           <span class="services__arrow" aria-hidden="true">→</span>
         </li>
-        <li class="services__item services__item--featured reveal-up" data-visual="6">
+        <li class="services__item services__item--featured reveal-up" data-visual="6" data-service="5" role="button" tabindex="0">
           <span class="services__index">06</span>
           <span class="services__name">Motion Graphics</span>
           <span class="services__arrow" aria-hidden="true">→</span>
         </li>
-        <li class="services__item services__item--featured reveal-up" data-visual="1">
+        <li class="services__item services__item--featured reveal-up" data-visual="1" data-service="6" role="button" tabindex="0">
           <span class="services__index">07</span>
           <span class="services__name">3D Animation</span>
           <span class="services__arrow" aria-hidden="true">→</span>
         </li>
-        <li class="services__item reveal-up" data-visual="2">
+        <li class="services__item reveal-up" data-visual="2" data-service="7" role="button" tabindex="0">
           <span class="services__index">08</span>
           <span class="services__name">Product Visuals</span>
           <span class="services__arrow" aria-hidden="true">→</span>
         </li>
-        <li class="services__item reveal-up" data-visual="3">
+        <li class="services__item reveal-up" data-visual="3" data-service="8" role="button" tabindex="0">
           <span class="services__index">09</span>
           <span class="services__name">Advertising</span>
           <span class="services__arrow" aria-hidden="true">→</span>
         </li>
-        <li class="services__item reveal-up" data-visual="4">
+        <li class="services__item reveal-up" data-visual="4" data-service="9" role="button" tabindex="0">
           <span class="services__index">10</span>
           <span class="services__name">Social Media</span>
           <span class="services__arrow" aria-hidden="true">→</span>
         </li>
-        <li class="services__item reveal-up" data-visual="5">
+        <li class="services__item reveal-up" data-visual="5" data-service="10" role="button" tabindex="0">
           <span class="services__index">11</span>
           <span class="services__name">Creative Campaigns</span>
           <span class="services__arrow" aria-hidden="true">→</span>
         </li>
-        <li class="services__item reveal-up" data-visual="6">
+        <li class="services__item reveal-up" data-visual="6" data-service="11" role="button" tabindex="0">
           <span class="services__index">12</span>
           <span class="services__name">Digital Content</span>
           <span class="services__arrow" aria-hidden="true">→</span>
@@ -309,6 +369,30 @@
 
       <div class="services__preview" id="servicesPreview" aria-hidden="true"></div>
     </section>
+
+    <!-- Service detail overlay — content is populated dynamically by
+         script.js (SERVICES array) when a service row is clicked/tapped. -->
+    <div class="service-modal" id="serviceModal" aria-hidden="true">
+      <div class="service-modal__scroll">
+        <div class="service-modal__inner">
+          <button class="service-modal__close" id="serviceModalClose" aria-label="Close service details">&times;</button>
+
+          <p class="service-modal__eyebrow" id="serviceModalIndex"></p>
+          <h2 class="service-modal__title" id="serviceModalTitle"></h2>
+          <p class="service-modal__desc" id="serviceModalDesc"></p>
+
+          <h3 class="service-modal__heading">What We Do</h3>
+          <ul class="service-modal__list" id="serviceModalWhat"></ul>
+
+          <h3 class="service-modal__heading">Ideal For</h3>
+          <ul class="service-modal__tags" id="serviceModalIdeal"></ul>
+
+          <div class="service-modal__placeholder">SERVICE VISUAL<br>1:1 IMAGE</div>
+
+          <a href="#contact" class="btn btn--primary service-modal__cta" id="serviceModalCta">Let's Work Together</a>
+        </div>
+      </div>
+    </div>
 
     <!-- =====================================================
          ABOUT
@@ -321,12 +405,27 @@
         <div class="about__body reveal-up">
           <p>
             M3ORA is a creative studio built around the belief that great ideas deserve
-            more than attention — they deserve to be remembered.
+            more than attention — they deserve to be remembered. We exist to give brands
+            a visual voice that actually gets noticed in a crowded feed.
           </p>
           <p>
-            We combine creative thinking, visual design, motion, storytelling and digital
-            experiences to help brands communicate with clarity and impact.
+            We work with startups, D2C brands and businesses across fashion, healthcare,
+            education, real estate and beyond — anyone who needs their story told with
+            clarity instead of noise.
           </p>
+          <p>
+            Every project starts with the idea, not the trend. We combine creative
+            thinking, visual design, motion and storytelling to shape that idea into a
+            visual experience worth remembering.
+          </p>
+
+          <ul class="about__tags" aria-label="What we bring together">
+            <li>Creative Thinking</li>
+            <li>Visual Design</li>
+            <li>Motion</li>
+            <li>Digital Experiences</li>
+          </ul>
+
           <div class="about__visual" aria-hidden="true">
             <img src="water-mark-logo.png" alt="" class="about__mark">
           </div>
