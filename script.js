@@ -138,7 +138,6 @@ document.addEventListener('DOMContentLoaded', () => {
      Used to fill in the case-study modal below.
   ----------------------------------------------------- */
   const PROJECTS = [
-   const PROJECTS = [
   {
     name: 'Eyewear Brand',
     category: 'Brand / Social Media / Video',
@@ -180,12 +179,12 @@ document.addEventListener('DOMContentLoaded', () => {
   },
 
   {
-    name: 'Chanakya IAS',
+    name: 'chanakya ias academy',
     category: 'Education / Social Media / Video',
     video: 'portfolio/video/chanakya_ias.mp4',
 
     intro:
-      'Educational social media content created for Chanakya IAS as part of agency production work, focused on communicating exam-preparation and educational messaging through clear and engaging visual content.',
+      'Educational social media content created for chanakya ias academy as part of agency production work, focused on communicating exam-preparation and educational messaging through clear and engaging visual content.',
 
     details: {
       'Client / Brand': 'chanakya ias academy',
