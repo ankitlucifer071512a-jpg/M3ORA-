@@ -139,11 +139,11 @@ document.addEventListener('DOMContentLoaded', () => {
   ----------------------------------------------------- */
   const PROJECTS = [
     {
-      name: 'Jao Chashma',
+      name: 'Eyewear Brand',
       category: 'Brand / Social Media / Video',
       video: 'portfolio/video/savefy.mp4',
-      intro: 'Social media video created for Jao Chashma, an eyewear brand based in Qatar.',
-      details: { 'Client / Brand': 'Jao Chashma', 'Industry': 'Eyewear', 'Market': 'Qatar', 'Type': 'Social Media / Video' },
+      intro: 'Visual content created for a spectacles and eyewear brand serving the Qatar market. The project focused on creating engaging social media content that presents the brand and its eyewear in a clean, modern and visually appealing format.',
+      details: { 'Client / Brand': 'Eyewear Brand', 'Industry': 'Eyewear / Spectacles', 'Market': 'Qatar', 'Project Type': 'Social Media / Brand Video' },
       work: 'Video editing and motion graphics created to present the eyewear brand in a clean, social-media-ready format.'
     },
     {
