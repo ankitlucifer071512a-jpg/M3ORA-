@@ -138,56 +138,126 @@ document.addEventListener('DOMContentLoaded', () => {
      Used to fill in the case-study modal below.
   ----------------------------------------------------- */
   const PROJECTS = [
-    {
-      name: 'Eyewear Brand',
-      category: 'Brand / Social Media / Video',
-      video: 'portfolio/video/savefy.mp4',
-      intro: 'Visual content created for a spectacles and eyewear brand serving the Qatar market. The project focused on creating engaging social media content that presents the brand and its eyewear in a clean, modern and visually appealing format.',
-      details: { 'Client / Brand': 'Eyewear Brand', 'Industry': 'Eyewear / Spectacles', 'Market': 'Qatar', 'Project Type': 'Social Media / Brand Video' },
-      work: 'Video editing and motion graphics created to present the eyewear brand in a clean, social-media-ready format.'
-    },
-    {
-      name: 'TVS',
-      category: 'Automotive / Brand Video / Social Media',
-      video: 'portfolio/video/tvs.mp4',
-      intro: 'Automotive-focused visual content created for TVS as part of agency production work.',
-      details: { 'Client / Brand': 'TVS', 'Industry': 'Automotive', 'Type': 'Brand Video / Social Media' },
-      work: 'Visual content produced for TVS during agency production work, focused on automotive brand storytelling.'
-    },
-    {
-      name: 'Chanakya IAS',
-      category: 'Education / Social Media / Video',
-      video: 'portfolio/video/chanakya_ias.mp4',
-      intro: 'Educational social media content created for Chanakya IAS as part of agency production work.',
-      details: { 'Client / Brand': 'Chanakya IAS', 'Industry': 'Education', 'Type': 'Social Media / Video' },
-      work: 'Video content built to communicate exam-prep and educational messaging for a social media audience.'
-    },
-    {
-      name: 'Logo / Card Creative',
-      category: 'Brand Creative / Promotional Visual',
-      video: 'portfolio/video/leo.mp4',
-      intro: 'A logo/card-style promotional creative featuring Rohit Sharma.',
-      details: { 'Type': 'Brand Creative / Promotional Visual', 'Format': 'Logo / Card Video' },
-      work: 'A motion-driven logo/card creative built around a promotional visual featuring Rohit Sharma.'
-    },
-    {
-      name: 'Clothing & Fashion Blog',
-      category: 'Fashion / Social Media / Content',
-      video: 'portfolio/video/cloth_2_1.mp4',
-      intro: 'Fashion-focused social media content created for an Australia-based clothing brand/blog.',
-      details: { 'Industry': 'Fashion', 'Market': 'Australia', 'Type': 'Social Media / Content' },
-      work: 'Social content edited for a fashion/clothing blog, styled for an Australian audience.'
-    },
-    {
-      name: 'MedBell',
-      category: 'Healthcare / App / Product Video',
-      video: 'portfolio/video/medbell.mp4',
-      intro: 'Product-focused visual content created for MedBell, a healthcare app designed around medicine and health-related assistance.',
-      details: { 'Client / Brand': 'MedBell', 'Industry': 'Healthcare', 'Type': 'App / Product Video' },
-      work: 'Product video created to communicate what the MedBell app does and how it supports medicine and health-related assistance.'
-    }
-  ];
+   const PROJECTS = [
+  {
+    name: 'Eyewear Brand',
+    category: 'Brand / Social Media / Video',
+    video: 'portfolio/video/savefy.mp4',
 
+    intro:
+      'Visual content created for a spectacles and eyewear brand serving the Qatar market. The project focused on presenting the brand and its eyewear through engaging, clean and social-media-friendly visual communication.',
+
+    details: {
+      'Client / Brand': 'Eyewear Brand',
+      'Industry': 'Eyewear / Spectacles',
+      'Market': 'Qatar',
+      'Project Type': 'Social Media / Brand Video',
+      'Focus': 'Product & Brand Communication'
+    },
+
+    work:
+      'The creative was developed to showcase the eyewear brand in a visually engaging way while keeping the spectacles and overall brand presentation at the centre of the content. The editing and visual treatment were designed for a modern social media audience, with a clean and easy-to-consume presentation.'
+  },
+
+  {
+    name: 'TVS',
+    category: 'Automotive / Brand Video / Social Media',
+    video: 'portfolio/video/tvs.mp4',
+
+    intro:
+      'Automotive-focused visual content created for TVS as part of agency production work, designed to present the motorcycle and brand experience through dynamic and engaging video storytelling.',
+
+    details: {
+      'Client / Brand': 'TVS',
+      'Industry': 'Automotive',
+      'Project Type': 'Brand Video / Social Media',
+      'Work Context': 'Agency Production',
+      'Focus': 'Automotive Visual Storytelling'
+    },
+
+    work:
+      'The project focused on creating an energetic visual presentation around the TVS motorcycle experience. Through video editing, pacing and visual storytelling, the content was shaped to feel engaging and suitable for digital and social media communication while keeping the motorcycle at the centre of the story.'
+  },
+
+  {
+    name: 'Chanakya IAS',
+    category: 'Education / Social Media / Video',
+    video: 'portfolio/video/chanakya_ias.mp4',
+
+    intro:
+      'Educational social media content created for Chanakya IAS as part of agency production work, focused on communicating exam-preparation and educational messaging through clear and engaging visual content.',
+
+    details: {
+      'Client / Brand': 'chanakya ias academy',
+      'Industry': 'Education',
+      'Project Type': 'Social Media / Video',
+      'Work Context': 'Agency Production',
+      'Focus': 'Educational Content'
+    },
+
+    work:
+      'The creative approach focused on transforming educational information into engaging digital content for a social media audience. The editing and visual presentation were structured to keep the communication clear, accessible and engaging while supporting the educational nature of the brand.'
+  },
+
+  {
+    name: 'Logo / Card Creative',
+    category: 'Brand Creative / Promotional Visual',
+    video: 'portfolio/video/leo.mp4',
+
+    intro:
+      'A motion-driven logo and card-style promotional creative featuring Rohit Sharma, designed as a visually engaging brand communication piece.',
+
+    details: {
+      'Project Type': 'Brand Creative / Promotional Visual',
+      'Format': 'Logo / Card Video',
+      'Featured Personality': 'Rohit Sharma',
+      'Creative Focus': 'Motion & Visual Presentation'
+    },
+
+    work:
+      'The project combines logo-focused design, card-style visuals and motion to create a strong promotional presentation. The creative was built around visual impact, brand presentation and movement, using a compact format designed to work effectively as digital content.'
+  },
+
+  {
+    name: 'Clothing & Fashion Blog',
+    category: 'Fashion / Social Media / Content',
+    video: 'portfolio/video/cloth_2_1.mp4',
+
+    intro:
+      'Fashion-focused social media content created for a clothing and fashion blog serving an Australian audience, with an emphasis on presenting clothing and lifestyle content in an engaging digital format.',
+
+    details: {
+      'Industry': 'Fashion / Clothing',
+      'Market': 'Australia',
+      'Project Type': 'Social Media / Content',
+      'Content Focus': 'Fashion & Lifestyle',
+      'Audience': 'Digital / Social Media Audience'
+    },
+
+    work:
+      'The content was edited with a social-first approach, focusing on presenting fashion and clothing content in a visually appealing and easy-to-consume format. The editing style supports the lifestyle nature of the content while keeping the subject and overall presentation clear and engaging.'
+  },
+
+  {
+    name: 'MedBell',
+    category: 'Healthcare / App / Product Video',
+    video: 'portfolio/video/medbell.mp4',
+
+    intro:
+      'Product-focused visual content created for MedBell, a healthcare app built around medicine and health-related assistance, with the aim of communicating the product experience through clear and engaging video.',
+
+    details: {
+      'Client / Brand': 'MedBell',
+      'Industry': 'Healthcare',
+      'Project Type': 'App / Product Video',
+      'Focus': 'Healthcare & Digital Product',
+      'Content Type': 'Product Communication'
+    },
+
+    work:
+      'The video focuses on presenting the MedBell app and communicating its healthcare-related purpose through visual storytelling. The editing was structured to make the product easy to understand while maintaining a clean, accessible and professional presentation suitable for digital audiences.'
+  }
+];
   /* -----------------------------------------------------
      3d. SERVICES DATA
      One entry per .services__item, matched by its data-service index.
